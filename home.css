@@ -1,0 +1,99 @@
+.body {
+  background-color: rgb(27, 27, 196);
+  height: 700px;
+  width: 400px;
+  margin-top: 100px;
+  margin-left: 400px;
+  border-radius: 5%;
+  border: 2px solid red;
+}
+.body-screen {
+  background-color: transparent;
+  width: 300px;
+  height: 150px;
+  margin-left: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.body-screen-size {
+  background-color: green;
+  height: 90px;
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: orange;
+  font-size: 40px;
+}
+.body-brand {
+  height: 100px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+.body-brand h3 {
+  margin-left: 20px;
+  margin-top: 40px;
+  padding-top: 5px;
+  font-weight: bold;
+  font-family: "Libre Baskerville", serif;
+  color: white;
+}
+.body-brand-solar {
+  height: 40px;
+  width: 170px;
+  background-color: rgb(231, 18, 18);
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.body-buttons {
+  /*  background-color: orange; */
+  height: 400px;
+  margin: 20px;
+  margin-top: 0;
+}
+
+.mrc {
+  background-color: rgb(133, 25, 200);
+  padding: 5px;
+  border-radius: 40%;
+  margin: 7px;
+  width: 50px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+.square, .plus-minus {
+  background-color: rgb(203, 66, 66);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.main-buttons {
+  width: 60px;
+  height: 50px;
+  padding: 10px;
+  margin: 12px;
+  border-radius: 45%;
+  background-color: rgb(34, 151, 214);
+  font-weight: bold;
+  font-size: 20px;
+  color: orange;
+  cursor: pointer;
+}
+
+#plusSign {
+  height: 80px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 20px;
+  display: inline;
+  z-index: 5;
+}
