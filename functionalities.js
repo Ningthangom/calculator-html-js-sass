@@ -9,10 +9,132 @@ document.addEventListener('click', function(e){
 });
 
 const fistArray = [];
+let inputString = "";
 let firstNumber; 
 let joinedfistArray;
 
 const secondArray = [];
+
+function calculation (firstNumber, secondNumber , operation) {
+
+    if(operation == '+' ){
+        return firstNumber + secondNumber;
+    }else if (operation == '-' ){
+        return firstNumber - secondNumber;
+    }else if (operation == "÷") {
+        return firstNumber / secondNumber;
+    }else if (operation == "x") {
+        return firstNumber * secondNumber;
+    }else if (operation == '%') {
+        return firstNumber % secondNumber;
+    }
+}
+
+
+// checking if a math operator exist
+function checkExistingOperator (string,enteredOperator){
+    console.log("this is the first index of the string: ", typeof string[0], string[0])
+    if (string[0] ==='-'){
+        console.log("this is the whole string before removing minus: ", string);
+        // convert string to an array 
+        /* let stringToArray = [...string];
+        console.log("string to array: ", stringToArray); */
+
+        
+        let stringNoMinus = string.substring(1);
+        console.log("this is String without minus: ", stringNoMinus)
+
+        // Array to s
+         if (string.charAt(string.search(/[+\-\*\/\÷\x\%]/))) {
+             //split the string values
+             const values = stringNoMinus.split(/[+\-\*\/\÷\x\%]/);
+             console.log("checking nagative value", values);
+             // to do: need to figure out how to handle negative value
+             console.log(
+                 "this is negative number: ",
+                 parseFloat(`-${values[0]}`),
+             );
+             //get the operator
+             const operators = stringNoMinus.charAt(
+                 stringNoMinus.search(/[+\-\*\/\÷\x\%]/),
+             );
+
+             //call calculation function to do math operation on the first two
+             const calResult = calculation(
+                 //adding nagative value back since it was removed
+                 parseFloat(`-${values[0]}`),
+                 parseFloat(values[1]),
+                 operators,
+             );
+             //remove the first two elements
+             const removeFirstTwo = values.splice(0, 2);
+             // add the calculation result to the start of the array;
+             values.unshift(calResult);
+
+             // change value back into string
+             string = values.join();
+             console.log("array to string: ", string);
+
+             // add new operator to new string;
+             string = string.concat(enteredOperator);
+             // then add the operator again;
+             /* document.getElementById("screen").innerHTML = `${string}`; */
+             return string;
+         } else {
+             string = string.concat(enteredOperator);
+             console.log("string when no operator: ", string);
+             return string;
+         }
+    } else {
+         if (string.charAt(string.search(/[+\-\*\/\÷\x\%]/))) {
+             //split the string values
+             const values = string.split(/[+\-\*\/\÷\x\%]/);
+             console.log("checking nagative value", values);
+             // to do: need to figure out how to handle negative value
+
+             //get the operator
+             const operators = string.charAt(string.search(/[+\-\*\/\÷\x\%]/));
+
+             //call calculation function to do math operation on the first two
+             const calResult = calculation(
+                 parseFloat(values[0]),
+                 parseFloat(values[1]),
+                 operators,
+             );
+             //remove the first two elements
+             const removeFirstTwo = values.splice(0, 2);
+             // add the calculation result to the start of the array;
+             values.unshift(calResult);
+
+             // change value back into string
+             string = values.join();
+             console.log("array to string: ", string);
+
+             // add new operator to new string;
+             string = string.concat(enteredOperator);
+             // then add the operator again;
+             /* document.getElementById("screen").innerHTML = `${string}`; */
+             return string;
+         } else {
+             string = string.concat(enteredOperator);
+             console.log("string when no operator: ", string);
+             return string;
+         }
+
+    }
+    
+    
+
+}
+
+
+ function stringsOnly(array) {
+     let string = array.filter((item) => typeof item === "string");
+     console.log(string);
+     return string;
+ }
+
+
 
 // write one to an rray 
 function writeNumberOne(id) {
@@ -31,7 +153,8 @@ function writeNumberOne(id) {
 
        console.log(typeof stringToNumber);
        console.log("number is ", stringToNumber);
-    document.getElementById("screen").innerHTML = `${joinedfistArray}`;
+       inputString = inputString.concat("1")
+    document.getElementById("screen").innerHTML = `${inputString}`;
 }
 
 
@@ -52,7 +175,9 @@ function writeNumberTwo(id) {
 
      console.log(stringToNumber);
      console.log("number is ", stringToNumber);
-    document.getElementById("screen").innerHTML = `${joinedfistArray}`;
+
+     inputString = inputString.concat("2");
+    document.getElementById("screen").innerHTML = `${inputString}`;
 }
 
 // write three to an array 
@@ -70,62 +195,104 @@ function writeNumberThree(id) {
 
 
     console.log("number is ", stringToNumber);
-    document.getElementById("screen").innerHTML = `${joinedfistArray}`;
+
+     inputString = inputString.concat("3");
+    document.getElementById("screen").innerHTML = `${inputString}`;
+}
+
+// click four 
+function writeNumberFour(id) {
+  
+    inputString = inputString.concat("4");
+    document.getElementById("screen").innerHTML = `${inputString}`;
+}
+
+function writeNumberFive(id) {
+    inputString = inputString.concat("5");
+    document.getElementById("screen").innerHTML = `${inputString}`;
+}
+
+function writeNumberSix(id) {
+    inputString = inputString.concat("5");
+    document.getElementById("screen").innerHTML = `${inputString}`;
+}
+
+function writeNumberSeven(id) {
+    inputString = inputString.concat("5");
+    document.getElementById("screen").innerHTML = `${inputString}`;
+}
+
+function writeANumber (number) {
+    switch(number){
+    case 1:
+        inputString = inputString.concat("1");
+        document.getElementById("screen").innerHTML = `${inputString}`;
+        break;
+    case 2: 
+    }
+    
 }
 
 
 // when press + 
 function clickPlus (id) {
 
-     document.getElementById("screen").innerHTML = `${joinedfistArray} + `;
-      fistArray.push("+");
+ const newString = checkExistingOperator(inputString, '+');
+    console.log("this is return string ", newString);
+    inputString = newString;
+    document.getElementById("screen").innerHTML = `${inputString}`;
+
+return 0;
+
+}
+
+// when press - 
+function clickMinus (id) {
+
+ const newString = checkExistingOperator(inputString, '-');
+    console.log("this is return string ", newString);
+    inputString = newString;
+    document.getElementById("screen").innerHTML = `${inputString}`;
+
+return 0;
+
 }
 
 
-// when cliked on equal 
-function clickEqual(id) {
+// when press  ÷ 
+function clickDivide (id) {
 
-   /*  const arraybeforeSign  = fistArray.slice("+")
-    console.log(arraybeforeSign); */
-/*     let result = []
+ const newString = checkExistingOperator(inputString, "÷");
+    console.log("this is return string ", newString);
+    inputString = newString;
+    document.getElementById("screen").innerHTML = `${inputString}`;
 
-  fistArray.forEach(function(element) {
-    if(element = '+')
-        result.push([])
-    result[result.length - 1].push(element)
-
-    
-
-})
-
-console.log(result); */
-
-/*     let fistNumbers = [];
-    for (let i = 0; i < fistArray["+"]; i++) {
-        firstNumber.push(fistArray[i])
-    }
-
-    console.log(fistNumbers); */
-
-
-    const sortedArray = fistArray.reduce(
-        (inital, next) => {
-            const lastIndex = inital.length - 1;
-            if (typeof next === "number") {
-                inital[lastIndex].push(next);
-            } else {
-                inital.push([]);
-            }
-            return inital;
-        },
-        [[]],
-    );
-
-    console.log("this is sorted array ", sortedArray)
-
-
+return 0;
 
 }
+
+
+// muliplication
+function clickMultiply(id) {
+    const newString = checkExistingOperator(inputString, "x");
+    console.log("this is return string ", newString);
+    inputString = newString;
+    document.getElementById("screen").innerHTML = `${inputString}`;
+
+    return 0;
+}
+
+
+//percentage 
+function clickPercentage (id) {
+    const newString = checkExistingOperator(inputString, "% ");
+    console.log("this is return string ", newString);
+    inputString = newString;
+    document.getElementById("screen").innerHTML = `${inputString}`;
+
+    return 0;
+}
+
 
 
 // delete number from calculator 
@@ -136,13 +303,22 @@ function deleteArray(id) {
     fistArray.length = 0;
      console.log(fistArray);
      const joinedfistArray = fistArray.join("");
-    document.getElementById("screen").innerHTML = `${joinedfistArray}`;
+     inputString = "";
+    document.getElementById("screen").innerHTML = `${inputString}`;
 }
 
 
+// 
+
+
 // when press add or minus or multiply
-// create a new array 
-// add the numbers to the second array 
+// check the string if it has one of the signs
+// if there is, split the number in two string
+// convert those strings into float 
+// then based on the math sign perform a calculation
+// then return the result 
+// othewise return the value of entered value
+
 
 // how do i decide to put it in the first or second or third array;
 
@@ -166,3 +342,7 @@ function deleteArray(id) {
 // numbers before the math operation that
 // numbers after the math operation 
 // numbers after the equal sign 
+
+
+
+// 
