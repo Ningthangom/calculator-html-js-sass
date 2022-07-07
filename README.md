@@ -36,3 +36,9 @@
 ### IV. Calculation Function  
      => switch case (get three params: firstNum, secondNum, and operator);
      => do calculation of two numbers based on the operator
+
+
+
+### Calculator  
+
+![alt text]('./images/cal.png')
