@@ -128,171 +128,82 @@ function checkExistingOperator (string,enteredOperator){
 }
 
 
- function stringsOnly(array) {
-     let string = array.filter((item) => typeof item === "string");
-     console.log(string);
-     return string;
- }
-
-
-
-// write one to an rray 
-function writeNumberOne(id) {
-    var el = document.getElementById(id);
-    /*  el.style.color = "blue"; */
-    console.log("one");
-   
-    fistArray.push(1);
-    console.log(fistArray);
-     joinedfistArray = fistArray.join("");
-     console.log( joinedfistArray);
-     const stringToNumber = parseFloat(joinedfistArray);
-
-     firstNumber = stringToNumber;
-
-
-       console.log(typeof stringToNumber);
-       console.log("number is ", stringToNumber);
-       inputString = inputString.concat("1")
-    document.getElementById("screen").innerHTML = `${inputString}`;
-}
-
-
-// write two to an array 
-function writeNumberTwo(id) {
-    var el = document.getElementById(id);
-    /*  el.style.color = "blue"; */
-    console.log("one");
-    fistArray.push(2);
-    console.log(fistArray);
-    joinedfistArray = fistArray.join('');
-     console.log(joinedfistArray);
-     const stringToNumber = parseFloat(joinedfistArray);
-
-
-     firstNumber = stringToNumber;
-
-
-     console.log(stringToNumber);
-     console.log("number is ", stringToNumber);
-
-     inputString = inputString.concat("2");
-    document.getElementById("screen").innerHTML = `${inputString}`;
-}
-
-// write three to an array 
-function writeNumberThree(id) {
-    var el = document.getElementById(id);
-    /*  el.style.color = "blue"; */
-    console.log("three");
-    fistArray.push(3);
-    console.log(fistArray);
-    joinedfistArray = fistArray.join("");
-    console.log( joinedfistArray);
-    const stringToNumber = parseFloat(joinedfistArray);
-
-    firstNumber = stringToNumber;
-
-
-    console.log("number is ", stringToNumber);
-
-     inputString = inputString.concat("3");
-    document.getElementById("screen").innerHTML = `${inputString}`;
-}
-
-// click four 
-function writeNumberFour(id) {
-  
-    inputString = inputString.concat("4");
-    document.getElementById("screen").innerHTML = `${inputString}`;
-}
-
-function writeNumberFive(id) {
-    inputString = inputString.concat("5");
-    document.getElementById("screen").innerHTML = `${inputString}`;
-}
-
-function writeNumberSix(id) {
-    inputString = inputString.concat("5");
-    document.getElementById("screen").innerHTML = `${inputString}`;
-}
-
-function writeNumberSeven(id) {
-    inputString = inputString.concat("5");
-    document.getElementById("screen").innerHTML = `${inputString}`;
-}
-
 function writeANumber (number) {
-    switch(number){
-    case 1:
-        inputString = inputString.concat("1");
-        document.getElementById("screen").innerHTML = `${inputString}`;
-        break;
-    case 2: 
+    switch (number) {
+        case 1:
+            inputString = inputString.concat("1");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 2:
+            inputString = inputString.concat("2");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 3:
+            inputString = inputString.concat("3");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 4:
+            inputString = inputString.concat("4");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 5:
+            inputString = inputString.concat("5");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 6:
+            inputString = inputString.concat("6");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 7:
+            inputString = inputString.concat("7");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 8:
+            inputString = inputString.concat("8");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 9:
+            inputString = inputString.concat("9");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case 0:
+            inputString = inputString.concat("0");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        default:
+            return 'enter a number';
     }
     
 }
 
+// click Math operation
 
-// when press + 
-function clickPlus (id) {
-
- const newString = checkExistingOperator(inputString, '+');
-    console.log("this is return string ", newString);
-    inputString = newString;
-    document.getElementById("screen").innerHTML = `${inputString}`;
-
-return 0;
-
+function mathOperations (operator) {
+    switch (operator) {
+        case "+":
+            inputString = checkExistingOperator(inputString, "+");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case "-":
+            inputString = checkExistingOperator(inputString, "-");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case "%":
+            inputString = checkExistingOperator(inputString, "%");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case "÷":
+            inputString = checkExistingOperator(inputString, "÷");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        case "x":
+            inputString = checkExistingOperator(inputString, "x");
+            document.getElementById("screen").innerHTML = `${inputString}`;
+            break;
+        default:
+            return 'enter a proper math sign';
+    }
 }
-
-// when press - 
-function clickMinus (id) {
-
- const newString = checkExistingOperator(inputString, '-');
-    console.log("this is return string ", newString);
-    inputString = newString;
-    document.getElementById("screen").innerHTML = `${inputString}`;
-
-return 0;
-
-}
-
-
-// when press  ÷ 
-function clickDivide (id) {
-
- const newString = checkExistingOperator(inputString, "÷");
-    console.log("this is return string ", newString);
-    inputString = newString;
-    document.getElementById("screen").innerHTML = `${inputString}`;
-
-return 0;
-
-}
-
-
-// muliplication
-function clickMultiply(id) {
-    const newString = checkExistingOperator(inputString, "x");
-    console.log("this is return string ", newString);
-    inputString = newString;
-    document.getElementById("screen").innerHTML = `${inputString}`;
-
-    return 0;
-}
-
-
-//percentage 
-function clickPercentage (id) {
-    const newString = checkExistingOperator(inputString, "% ");
-    console.log("this is return string ", newString);
-    inputString = newString;
-    document.getElementById("screen").innerHTML = `${inputString}`;
-
-    return 0;
-}
-
 
 
 // delete number from calculator 
