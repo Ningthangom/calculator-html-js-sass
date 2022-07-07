@@ -41,4 +41,4 @@
 
 ### Calculator  
 
-![alt text]('./images/cal.png')
+![Screenshot]('./images/cal.png')
