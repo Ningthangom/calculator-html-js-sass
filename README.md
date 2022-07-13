@@ -38,6 +38,19 @@
      => do calculation of two numbers based on the operator
 
 
+### V. Adding Decimal 
+      // if clicked demical 
+     // check the operator 
+    //=> if operator doesn't exit () {
+        // check for the decimal
+            // if decimal doesn't exist  => concat the decimal 
+            // if it exist => don't concat decimal to the string
+    // if operator exist => split the string 
+        // => check the second value has decimal 
+        //     => if exit => don't concat (just return the previous string)
+        //     => if not => concat the decimal 
+        // 
+
 
 ### Calculator  
 
