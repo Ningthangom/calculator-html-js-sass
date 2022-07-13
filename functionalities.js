@@ -1,5 +1,23 @@
 
 
+let calOn = true;
+ function toggle() {
+     calOn = calOn ? false : true;
+       console.log("Toggled bool is", calOn);
+           
+   if (calOn === false) {
+         document.getElementById("onOff").innerHTML = `Off`;
+   } else {
+       /* document.getElementsByClassName("number").disabled = false; */
+        document.getElementById("onOff").innerHTML = `On`;
+   }
+  
+  
+ }
+
+
+
+
 let inputString = "";
 
 // get the operators 
@@ -46,7 +64,7 @@ function calculation (firstNumber, secondNumber , operation) {
     }else if (operation == "x") {
         return firstNumber * secondNumber;
     }else if (operation == '%') {
-        return (firstNumber  ) * secondNumber;
+        return (firstNumber) * secondNumber;
     }
 }
 
